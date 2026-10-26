@@ -1,0 +1,138 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><script src="https://telegram.org/js/telegram-web-app.js"></script><script>window.TG_BOT="__BOT__"</script><script src="/tg.js"></script><title>Дурак Club</title>
+<style>
+:root{color-scheme:dark;--bg:#0b2a22;--bg2:#13503f;--gold:#f5c451;--ink:#f4f1e8;--mut:#9fc2b4;--red:#d6303c;box-sizing:border-box;padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}html,body{height:100%;margin:0}
+body{background:radial-gradient(ellipse at 50% 35%,var(--bg2),var(--bg) 72%);color:var(--ink);font:15px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;user-select:none;-webkit-user-select:none}
+#app{max-width:560px;height:100%;margin:auto;padding:10px;display:flex;flex-direction:column;gap:8px;overflow-y:auto}
+h1{margin:6px 0 0;text-align:center;color:var(--gold);letter-spacing:1px}
+.box{background:#0004;border:1px solid #fff2;border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:8px}
+.row{display:flex;gap:8px;align-items:center}.row>*{flex:1}
+.btn{border:0;border-radius:11px;padding:11px 14px;font:700 15px inherit;font-family:inherit;color:#3a2a00;background:linear-gradient(#ffd96b,#e8a92a);box-shadow:0 3px 0 #9a6b10;cursor:pointer}
+.btn.g{background:#fff1;color:var(--ink);box-shadow:none;border:1px solid #fff3}.btn:active{transform:translateY(2px)}
+input{width:100%;padding:10px;border-radius:10px;border:1px solid #fff3;background:#0006;color:var(--ink);font:inherit;user-select:text;-webkit-user-select:text}
+.mut{color:var(--mut);font-size:13px}.fr{justify-content:space-between}.fr>*{flex:none}
+.c{--w:60px;width:var(--w);height:calc(var(--w)*1.45);background:#fffdf6;color:#1b1f27;border-radius:9px;box-shadow:0 2px 6px #0008;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;font-weight:800;font-size:calc(var(--w)*.3);flex:none;transition:transform .15s}.c.n{animation:pop .3s}
+.c:not(.bk){border:1px solid #d6cfba}.c b{position:absolute;left:calc(var(--w)*.07);top:calc(var(--w)*.04);line-height:.95;font-size:.85em;letter-spacing:-.5px;font-weight:700;text-align:center;font-family:Georgia,"Times New Roman",serif}.c b.f{left:auto;top:auto;right:calc(var(--w)*.07);bottom:calc(var(--w)*.04);transform:rotate(180deg)}.c u{display:block;text-decoration:none;font-size:.9em}.c s{position:absolute;text-decoration:none;transform:translate(-50%,-50%);font-size:calc(var(--w)*.25);line-height:1}.c s.v{transform:translate(-50%,-50%) rotate(180deg)}.c .fc{position:absolute;left:27%;right:27%;top:13%;bottom:13%;border:1px solid currentColor;border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:space-around;background:linear-gradient(135deg,#fff,#f1e6c4);font:700 calc(var(--w)*.46) Georgia,serif}.c .fc u{font-size:.5em}.c .fc u.v{transform:rotate(180deg)}.tm{position:relative;height:18px;border-radius:9px;background:#0005;overflow:hidden}.tm i{position:absolute;left:0;top:0;bottom:0;width:100%;background:#3ecf8e;transition:width .5s linear,background .3s}.tm span{position:relative;display:block;text-align:center;font-size:12px;line-height:18px;font-weight:700}select{padding:8px;border-radius:10px;border:1px solid #fff3;background:#0006;color:var(--ink);font:inherit}.c.r{color:var(--red)}.rx{display:flex;justify-content:center;gap:6px}.rx span{font-size:22px;padding:2px 7px;background:#fff1;border-radius:10px;cursor:pointer}.bub{position:fixed;left:0;right:0;text-align:center;font-size:46px;z-index:5;animation:pop .3s;pointer-events:none}
+.bk{background:repeating-linear-gradient(45deg,var(--k1,#2b5fd6) 0 6px,var(--k2,#1e47a8) 6px 12px);border:3px solid #fff}
+.hand{display:flex;justify-content:safe center;min-height:calc(var(--w,60px)*1.5);padding:16px 4px 6px;overflow-x:auto}.hand.mine{box-shadow:0 8px 14px -10px var(--gold)}
+.hand .c{margin-left:-20px}.hand .c:first-child{margin-left:0}.hand.s .c{--w:34px;margin-left:-16px}.hand.s{min-height:60px;padding-top:6px}
+.hand .c.ok{cursor:pointer;box-shadow:0 0 0 2px var(--gold),0 2px 6px #0008}.hand .c.ok:hover{transform:translateY(-12px)}.hand .c.x{filter:brightness(.55)}
+.mid{flex:1;display:flex;align-items:center;gap:10px;min-height:150px}
+.deck{display:flex;flex-direction:column;align-items:center;gap:4px;width:80px;font-size:13px;color:var(--mut)}.deck .c{--w:46px}.deck .t{transform:rotate(90deg);margin:10px 0}
+.tb{flex:1;display:flex;flex-wrap:wrap;gap:12px;justify-content:center}.pair{position:relative;width:56px;height:84px}.pair .c{--w:52px;position:absolute;left:0;top:0}.pair .c+.c{left:14px;top:14px;transform:rotate(9deg)}
+.st{text-align:center;color:var(--gold);min-height:22px;font-weight:600}
+.top{display:flex;justify-content:space-between;align-items:center}.top .btn{padding:6px 12px}
+.ov{position:fixed;inset:0;background:#000b;display:flex;align-items:center;justify-content:center;z-index:9}.ov .box{width:min(320px,90%);text-align:center;font-size:20px;background:#0b2a22}
+.toast{background:var(--gold);color:#3a2a00;border-radius:12px;padding:10px;font-weight:700}
+@keyframes pop{from{transform:scale(.6);opacity:0}}
+</style></head><body><div id="app"></div>
+<script>
+const SU=['♠','♥','♦','♣'],RK={11:'В',12:'Д',13:'К',14:'Т'},rk=c=>+c.split('-')[0],st=c=>+c.split('-')[1];
+const E=s=>String(s??'').replace(/[&<>"']/g,c=>'&#'+c.charCodeAt(0)+';');
+const beats=(d,a,T)=>st(d)==st(a)&&rk(d)>rk(a)||st(d)==T&&st(a)!=T;
+const sortH=g=>{const k=c=>(st(c)==g.trump?100:0)+st(c)*20+rk(c);g.a.sort((x,y)=>k(x)-k(y));g.b.sort((x,y)=>k(x)-k(y))};
+function newGame(v,t){const d=[];for(let r=6;r<=14;r++)for(let s=0;s<4;s++)d.push(r+'-'+s);
+ for(let i=d.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[d[i],d[j]]=[d[j],d[i]]}
+ const g={id:Date.now(),deck:d,trump:st(d[0]),table:[],att:'a',over:'',pv:v?1:0,tl:t||0};g.a=d.splice(-6);g.b=d.splice(-6);
+ const m=p=>Math.min(99,...g[p].filter(c=>st(c)==g.trump).map(rk));g.att=m('b')<m('a')?'b':'a';sortH(g);return g}
+function fill(g,a,d){for(const p of[a,d])while(g[p].length<6&&g.deck.length)g[p].push(g.deck.pop())}
+const canAdd=(g,c)=>{const d=g.att=='a'?'b':'a';return g.table.length<6&&g.table.length<g[d].length+g.table.filter(x=>x.d).length&&g.table.some(x=>rk(x.a)==rk(c)||(x.d&&rk(x.d)==rk(c)))};
+function pick(g){const d=g.att=='a'?'b':'a';g.table.forEach(x=>{g[d].push(x.a);if(x.d)g[d].push(x.d)});g.table=[];g.tk=0;fill(g,g.att,d)}
+function act(g,p,t,c){g=JSON.parse(JSON.stringify(g));const def=g.att=='a'?'b':'a',T=g.trump,open=g.table.find(x=>!x.d);if(g.over)return null;
+ if(t=='atk'&&p==g.att&&(!open||g.tk)&&g[p].includes(c)){
+  if(g.table.length&&!g.table.some(x=>rk(x.a)==rk(c)||(x.d&&rk(x.d)==rk(c))))return null;
+  if(g.table.length>=6||g.table.length>=g[def].length+g.table.filter(x=>x.d).length)return null;g[p].splice(g[p].indexOf(c),1);g.table.push({a:c,d:''})}
+ else if(t=='def'&&p==def&&open&&!g.tk&&g[p].includes(c)&&beats(c,open.a,T)){g[p].splice(g[p].indexOf(c),1);open.d=c}
+ else if(t=='tr'&&g.pv&&!g.tk&&p==def&&g.table.length&&g.table.length<6&&g.table.every(x=>!x.d&&rk(x.a)==rk(c))&&g[p].includes(c)&&g[g.att].length>g.table.length){g[p].splice(g[p].indexOf(c),1);g.table.push({a:c,d:''});g.att=p}
+ else if(t=='take'&&p==def&&open&&!g.tk){g.tk=1;if(!g[g.att].some(x=>canAdd(g,x)))pick(g)}
+ else if(t=='bito'&&p==g.att&&g.tk){pick(g)}
+ else if(t=='bito'&&p==g.att&&g.table.length&&!open){g.table=[];fill(g,g.att,def);g.att=def}
+ else return null;
+ sortH(g);if(!g.deck.length&&!g.table.length){const ea=!g.a.length,eb=!g.b.length;if(ea||eb)g.over=ea&&eb?'draw':ea?'b':'a'}return g}
+const actor=g=>g.tk?g.att:g.table.some(x=>!x.d)?(g.att=='a'?'b':'a'):g.att;
+function bot(g,p){const T=g.trump,def=g.att=='a'?'b':'a',v=c=>rk(c)+(st(c)==T?20:0),h=[...g[p]].sort((x,y)=>v(x)-v(y)),open=g.table.find(x=>!x.d);
+ if(p==g.att){const ok=h.filter(c=>!g.table.length||g.table.some(x=>rk(x.a)==rk(c)||(x.d&&rk(x.d)==rk(c))));
+  const c=ok.find(c=>st(c)!=T||!g.deck.length)||(g.table.length?null:ok[0]);
+  return c&&act(g,p,'atk',c)?['atk',c]:['bito']}
+ const c=h.find(c=>beats(c,open.a,T)&&(st(c)!=T||g.deck.length<5||rk(open.a)>=11));return c?['def',c]:['take']}
+
+let db,user,myId='guest',myName='Игрок',P={friends:[],w:0,l:0},names={},G,mode,side,ref,unsub,meta={},view='lobby',inv,msg,counted,bub,lastEm=0,pv=0,rkn=w=>['Новичок','Подкидыш','Шулер','Мастер','Легенда'][[0,3,8,15,30].filter(x=>w>=x).length-1];
+const LT={11:'J',12:'Q',13:'K',14:'A'},PL=r=>{const y=r<9?[22,50,78]:[20,40,60,80],p=[];y.forEach(v=>p.push([37,v],[63,v]));if(r==7)p.push([50,36]);if(r==8)p.push([50,36],[50,64]);if(r==9)p.push([50,50]);if(r==10)p.push([50,30],[50,70]);return p};
+let seen=new Set(),cur=new Set();
+const card=(c,cl='')=>{cur.add(c);const r=rk(c),s=SU[st(c)]+'\uFE0E',R=LT[r]||r,ix=`<b>${R}<u>${s}</u></b>`,mid=r==14?`<s style="left:50%;top:50%;font-size:calc(var(--w)*.75)">${s}</s>`:r>10?`<div class="fc"><u>${s}</u>${R}<u class="v">${s}</u></div>`:PL(r).map(([x,y])=>`<s class="${y>50?'v':''}" style="left:${x}%;top:${y}%">${s}</s>`).join('');return`<div class="c ${st(c)==1||st(c)==2?'r':''} ${seen.has(c)?'':'n'} ${cl}" data-a="play" data-c="${c}">${ix}${mid}${ix.replace('<b>','<b class="f">')}</div>`};
+const toast=t=>{msg=t;render();setTimeout(()=>{msg=null;render()},2600)};
+const saveP=()=>{if(db&&myId!='guest'){db.doc('data/users/'+myId+'/me').set(P).catch(()=>{});db.doc('top/'+myId).set({n:myName,w:P.w,l:P.l}).catch(()=>{})}};
+async function loadNames(){try{const ps=await user.profiles(P.friends);for(const k in ps)names[k]=ps[k].name}catch(e){}}
+
+function render(){applyTh();const A=document.getElementById('app');if(view=='lobby'||(mode=='net'&&!G)){A.innerHTML=lobby();return}
+ cur=new Set();{const k=G.id+'|'+G.table.length+'|'+G.a.length+'|'+G.b.length+'|'+(G.tk||0);if(k!=lk){if(lk){beep(G.table.length?520:300);if(actor(G)==side&&navigator.vibrate)navigator.vibrate(25)}lk=k}}const T=G.trump,me=side,op=me=='a'?'b':'a',def=G.att=='a'?'b':'a',open=G.table.find(x=>!x.d),ac=actor(G);
+ const oname=mode=='bot'?'Бот Вася':E((me=='a'?meta.nb:meta.na)||'Соперник');
+ const mine=me==ac,txt=G.over?'':G.tk?(mine?'Подкидывайте — соперник берёт':'Вы берёте, соперник подкидывает…'):mine?(me==G.att?(G.table.length?'Подкидывайте или «Бито»':'Ваш ход — атакуйте'):G.pv?'Отбивайтесь, переводите или берите':'Отбивайтесь или берите'):'Ход соперника…';
+ let h=`<div class="top"><button class="btn g" data-a="leave">← Меню</button><span class="mut">${oname} · ${G.pv?'переводной · ':''}карт: ${G[op].length}</span></div>
+ <div class="hand s">${G[op].map(()=>'<div class="c bk"></div>').join('')}</div>
+ <div class="mid"><div class="deck">${G.deck.length?card(G.deck[0],'t').replace('data-a="play"',''):`<b style="font-size:34px;color:#fff">${SU[T]}</b>`}<span>В колоде: ${G.deck.length}</span><span>Козырь ${SU[T]}</span></div>
+ <div class="tb">${G.table.map(x=>`<div class="pair">${card(x.a).replace('data-a="play"','')}${x.d?card(x.d).replace('data-a="play"',''):''}</div>`).join('')}</div></div>
+ <div class="st">${txt}</div>${G.tl&&!G.over?'<div class="tm"><i id="tmb"></i><span id="tmt"></span></div>':''}
+ <div class="row">${me==G.att&&(G.tk||G.table.length&&!open)&&!G.over?'<button class="btn" data-a="bito">'+(G.tk?'Хватит':'Бито')+'</button>':''}${me==def&&open&&!G.tk&&!G.over?'<button class="btn" data-a="take">Беру</button>':''}</div>
+ <div class="rx">${['😀','😂','😡','👍','🤔','👏'].map(e=>`<span data-a="rx" data-e="${e}">${e}</span>`).join('')}<span data-a="hint">💡</span><span data-a="snd">${snd?'🔊':'🔇'}</span></div><div class="hand ${mine?'mine':''}">${G[me].map(c=>{const ok=mine&&(act(G,me,me==G.att?'atk':'def',c)||(G.pv&&act(G,me,'tr',c)));return card(c,ok?'ok':'x')}).join('')}</div>`;
+ if(G.over)h+=`<div class="ov"><div class="box">${G.over=='draw'?'Ничья 🤝':G.over==me?'Вы дурак! 🤡':'Победа! 🏆'}<button class="btn" data-a="again">Ещё раз</button><button class="btn g" data-a="leave">В меню</button></div></div>`;
+ seen=cur;A.innerHTML=h+(bub?`<div class="bub" style="${bub.f==me?'bottom:170px':'top:80px'}">${bub.e}</div>`:'')+(msg?`<div class="toast">${E(msg)}</div>`:'');tmUI()}
+
+function lobby(){const wait=mode=='net'&&!G;
+ if(wait)return`<h1>Ждём соперника…</h1><div class="box" style="text-align:center">Код стола<div style="font-size:38px;color:var(--gold);letter-spacing:6px">${E(ref.id)}</div><div class="mut">Отправьте код другу или пригласите его из списка друзей</div><button class="btn" data-a="share">✈️ Позвать друга в Telegram</button><button class="btn g" data-a="leave">Отмена</button></div>`;
+ return`<h1>♠ Дурак Club ♥</h1><div class="mut" style="text-align:center">${rkn(P.w)} · Победы: ${P.w} · Поражения: ${P.l} · <span data-a="top" style="cursor:pointer;font-size:18px">🏆</span> <span data-a="th" style="cursor:pointer;font-size:18px">🎨</span></div>${showTop?`<div class="box"><b>🏆 Лучшие игроки</b>${TOP.map((x,i)=>`<div class="row fr"><span>${i+1}. ${E(x.n)}</span><span>${x.w} поб.</span></div>`).join('')||'<div class="mut">Пока пусто — сыграйте партию</div>'}</div>`:''}
+ ${inv?`<div class="toast">${E(inv.name)} зовёт вас играть! <div class="row" style="margin-top:6px"><button class="btn g" data-a="acc">Принять</button><button class="btn g" data-a="dis">Нет</button></div></div>`:''}
+ ${msg?`<div class="toast">${E(msg)}</div>`:''}
+ <div class="box"><label class="row" style="flex:none;gap:10px">⏱ Время на ход<select data-a="tl">${[15,30,45,60,0].map(v=>`<option value="${v}" ${tl==v?'selected':''}>${v?v+' с':'Без таймера'}</option>`).join('')}</select></label><label class="row" style="flex:none;gap:10px"><input type="checkbox" data-a="pv" ${pv?'checked':''} style="width:20px;flex:none"> Переводной дурак</label><button class="btn" data-a="bot">🤖 Играть с ботом</button><button class="btn" data-a="quick">⚡ Быстрая игра с живым соперником</button><button class="btn g" data-a="create">🌐 Создать стол для друга</button>
+ <div class="row"><input id="jc" placeholder="Код стола" maxlength="4" style="text-transform:uppercase"><button class="btn g" data-a="join">Войти</button></div></div>
+ <div class="box"><b>👥 Друзья</b><div class="mut">Ваш код (дайте его другу):</div><input id="my" readonly value="${E(myId)}" data-a="copy">
+ <div class="row"><input id="fc" placeholder="Код друга"><button class="btn g" data-a="add">Добавить</button></div>
+ ${P.friends.map(f=>`<div class="row fr"><span>${E(names[f]||'Игрок')}</span><button class="btn g" data-a="inv" data-f="${E(f)}">Пригласить</button></div>`).join('')||'<div class="mut">Пока никого. Добавьте друга по коду.</div>'}</div>`}
+
+function apply(p,m){const n=act(G,p,m[0],m[1]);if(!n)return;G=n;render();endCheck();
+ if(mode=='net')ref.update({s:JSON.stringify(n)}).catch(()=>toast('Нет связи'));else tick()}
+function tick(){if(mode=='bot'&&G&&!G.over&&actor(G)=='b')setTimeout(()=>{if(mode=='bot'&&G&&!G.over&&actor(G)=='b')apply('b',bot(G,'b'))},800)}
+function endCheck(){if(G&&G.over&&counted!=G.id){counted=G.id;if(G.over!='draw')(G.over==side?[330,262,196]:[392,523,659]).forEach((f,i)=>setTimeout(()=>beep(f,.25),i*180));if(G.over!='draw'){G.over==side?P.l++:P.w++;saveP()}}}
+function leave(){unsub&&unsub();if(mode=='net'&&ref&&side=='a'&&!meta.pb)ref.delete().catch(()=>{});unsub=ref=G=mode=null;meta={};view='lobby';render()}
+function sub(r,s){ref=r;side=s;mode='net';view='game';lastEm=-1;unsub=r.onSnapshot(sn=>{const d=sn.data();if(!d)return;meta=d;G=d.s?JSON.parse(d.s):null;render();endCheck();if(lastEm<0)lastEm=d.em?d.em.t:0;else if(d.em&&d.em.t>lastEm){lastEm=d.em.t;if(d.em.f!=side)show(d.em.f,d.em.e)}},()=>toast('Нет связи'))}
+async function create(pb){if(!db)return toast('Онлайн недоступен — войдите в аккаунт');const code=Math.random().toString(36).slice(2,6).toUpperCase(),r=db.doc('tables/'+code);
+ await r.set({pa:myId,na:myName,pb:'',nb:'',s:'',pv:pv?1:0,tl:tl,pub:pb?1:0,t:Date.now()}).catch(()=>toast('Не удалось создать стол'));sub(r,'a');return code}
+async function join(code){if(!db)return toast('Онлайн недоступен');code=(code||'').trim().toUpperCase();if(!code)return;
+ try{const r=db.doc('tables/'+code),sn=await r.get();if(!sn.exists)return toast('Стол не найден');const d=sn.data();
+  if(d.pa==myId)return sub(r,'a');if(d.pb&&d.pb!=myId)return toast('Стол занят');
+  if(!d.pb)await r.update({pb:myId,nb:myName,s:JSON.stringify(newGame(d.pv,d.tl))});sub(r,'b')}catch(e){toast('Не удалось войти')}}
+
+let tl=30,dl=0,tkey='';
+document.getElementById('app').addEventListener('change',e=>{if(e.target.dataset.a=='tl')tl=+e.target.value});
+function tmUI(){if(!G||G.over||!G.tl)return;const k=G.id+'|'+G.att+'|'+G.table.map(x=>x.a+x.d).join()+'|'+G.a.length+G.b.length+(G.tk||0);if(k!=tkey){tkey=k;dl=Date.now()+G.tl*1000}
+const left=Math.max(0,Math.ceil((dl-Date.now())/1000)),f=left/G.tl,b=document.getElementById('tmb');
+if(b){b.style.width=f*100+'%';b.style.background=f>.5?'#3ecf8e':f>.2?'#f5a623':'#e5484d';document.getElementById('tmt').textContent=(actor(G)==side?'Ваш ход':'Ход соперника')+' · '+left+' с'}return left}
+function auto(p){if(!G||G.over)return;const def=G.att=='a'?'b':'a',m=G.tk?['bito']:p==def&&G.table.some(x=>!x.d)?['take']:bot(G,p);dl=Date.now()+2000;if(p==side)toast('Время вышло — авто-ход');apply(p,m)}
+setInterval(()=>{const left=tmUI();if(left===undefined||left>0)return;const ac=actor(G);if(ac==side)auto(side);else if(mode=='net'&&Date.now()>dl+6000)auto(ac)},500);
+let snd=1,AC,lk='',TOP=[],showTop=0;
+const TH=[['#0b2a22','#13503f','#2b5fd6','#1e47a8'],['#0b1d33','#164a7a','#d6303c','#a31f2b'],['#2a0b17','#5a1a33','#2b5fd6','#1e47a8'],['#101216','#2a2f38','#f5c451','#c08a1d']];
+function applyTh(){const t=TH[P.th||0],s=document.documentElement.style;s.setProperty('--bg',t[0]);s.setProperty('--bg2',t[1]);s.setProperty('--k1',t[2]);s.setProperty('--k2',t[3])}
+function beep(f,d=.08){if(!snd)return;try{AC=AC||new(window.AudioContext||window.webkitAudioContext)();const o=AC.createOscillator(),g=AC.createGain();o.type='triangle';o.frequency.value=f;o.connect(g);g.connect(AC.destination);g.gain.setValueAtTime(.12,AC.currentTime);g.gain.exponentialRampToValueAtTime(.001,AC.currentTime+d);o.start();o.stop(AC.currentTime+d)}catch(e){}}
+function hint(){if(!G||G.over||actor(G)!=side)return toast('Сейчас не ваш ход');const m=bot(G,side);if(m[0]=='take')return toast('Совет: берите карты');if(m[0]=='bito')return toast(G.tk?'Совет: хватит':'Совет: бито');const el=document.querySelector('.hand:not(.s) [data-c="'+m[1]+'"]');if(el){el.style.transform='translateY(-18px)';el.style.outline='3px solid #fff'}}
+async function loadTop(){if(!db)return;try{const q=await db.collection('top').orderBy('w','desc').limit(10).get();TOP=q.docs.map(d=>d.data());render()}catch(e){}}
+async function quick(){if(!db)return toast('Онлайн недоступен — войдите в аккаунт');try{const q=await db.collection('tables').where('pub','==',1).limit(30).get(),now=Date.now(),f=q.docs.find(x=>{const d=x.data();return d&&!d.pb&&d.pa!=myId&&now-d.t<9e4});if(f)return join(f.id)}catch(e){}create(1)}
+function show(f,e){bub={f,e};render();clearTimeout(show.t);show.t=setTimeout(()=>{bub=null;render()},2200)}
+function react(e){if(!G)return;show(side,e);if(mode=='bot')setTimeout(()=>show('b',['😀','😂','🤔','👏','😡'][Math.random()*5|0]),1300);else ref.update({em:{f:side,e,t:Date.now()}}).catch(()=>{})}
+setInterval(()=>{if(mode=='net'&&ref&&side=='a'&&!meta.pb)ref.update({t:Date.now()}).catch(()=>{})},3e4);
+document.getElementById('app').addEventListener('click',async e=>{const t=e.target.closest('[data-a]');if(!t)return;const a=t.dataset.a,$=i=>document.getElementById(i)?.value.trim();
+ if(a=='bot'){mode='bot';side='a';meta={};G=newGame(pv,tl);view='game';render();tick()}
+ else if(a=='create')create();else if(a=='join')join($('jc'));else if(a=='leave')leave();
+ else if(a=='again'){if(mode=='bot'){G=newGame(G.pv,G.tl);render();tick()}else ref.update({s:JSON.stringify(newGame(G.pv,G.tl))})}
+ else if(a=='play'&&G&&actor(G)==side&&t.classList.contains('ok'))apply(side,[side==G.att?'atk':act(G,side,'def',t.dataset.c)?'def':'tr',t.dataset.c]);
+ else if(a=='rx')react(t.dataset.e);else if(a=='hint')hint();else if(a=='snd'){snd=!snd;render()}else if(a=='th'){P.th=((P.th||0)+1)%TH.length;saveP();render()}else if(a=='top'){showTop=!showTop;if(showTop)loadTop();render()}else if(a=='pv')pv=+t.checked;else if(a=='quick')quick();else if(a=='bito'||a=='take')apply(side,[a]);
+ else if(a=='copy'){t.select();try{await navigator.clipboard.writeText(myId);toast('Код скопирован')}catch(_){}}
+ else if(a=='add'){const f=$('fc');if(!f||f==myId||P.friends.includes(f))return toast('Проверьте код друга');P.friends.push(f);saveP();await loadNames();render()}
+ else if(a=='inv'){if(!db)return;if(!ref)await create();try{await db.doc('invites/'+t.dataset.f).set({from:myId,name:myName,code:ref.id,t:Date.now()})}catch(_){toast('Не удалось пригласить')}}
+ else if(a=='acc'){const c=inv.code;inv=null;db.doc('invites/'+myId).delete().catch(()=>{});join(c)}else if(a=='dis'){inv=null;db.doc('invites/'+myId).delete().catch(()=>{});render()}});
+
+render();
+(async()=>{try{db=await claude.use('db');user=await claude.use('user');if(user){myId=(await user.id())||myId;myName=(await user.me()).name||myName}
+ if(db&&myId!='guest'){const s=await db.doc('data/users/'+myId+'/me').get();if(s.exists)P={friends:[],w:0,l:0,...s.data()};
+  db.doc('invites/'+myId).onSnapshot(sn=>{const d=sn.data();if(d&&Date.now()-d.t<3e5&&(!G)){inv=d;render()}})}
+ await loadNames()}catch(e){}render()})();
+</script></body></html>
